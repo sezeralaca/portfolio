@@ -72,6 +72,7 @@ export const Projects: FC = () => {
                     src={project.image}
                     className="mx-auto"
                     alt={project.imageAlt}
+                    unoptimized
                   />
                 </a>
               </div>

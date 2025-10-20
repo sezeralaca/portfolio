@@ -16,6 +16,7 @@ export const Resume: FC = () => {
             height={18}
             alt="File"
             src="/icons/pdf.png"
+            unoptimized
           />
           Download
         </a>
@@ -31,6 +32,7 @@ export const Resume: FC = () => {
             height={18}
             alt="Internet"
             src="/icons/internet.png"
+            unoptimized
           />
           Open In New Tab
         </a>

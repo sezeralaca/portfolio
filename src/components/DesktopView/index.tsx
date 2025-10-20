@@ -11,7 +11,7 @@ import { getWindowPositionAndSize } from "@/lib/utils";
 import { Biography } from "../Apps/Biography";
 import { Resume } from "../Apps/Resume";
 import { Projects } from "../Apps/Projects";
-import { Mail } from "../Apps/Mail";
+// import { Mail } from "../Apps/Mail";
 
 export const DesktopView = () => {
   const { openedWindows, openWindow } = useWindowStore();
@@ -24,6 +24,7 @@ export const DesktopView = () => {
         label: "Biography",
         imageSrc: "/icons/computer.png",
         altImage: "Computer",
+        unoptimized: true,
         onOpen: () => {
           openWindow({
             id: "biography",
@@ -41,6 +42,7 @@ export const DesktopView = () => {
         label: "Résumé",
         imageSrc: "/icons/document.png",
         altImage: "Document",
+        unoptimized: true,
         onOpen: () => {
           openWindow({
             id: "résumé",
@@ -58,6 +60,7 @@ export const DesktopView = () => {
         label: "Projects",
         imageSrc: "/icons/briefcase.png",
         altImage: "Briefcase",
+        unoptimized: true,
         onOpen: () => {
           openWindow({
             id: "projects",
@@ -71,23 +74,23 @@ export const DesktopView = () => {
           });
         },
       },
-      {
-        label: "Mail",
-        imageSrc: "/icons/mail.png",
-        altImage: "Mail",
-        onOpen: () => {
-          openWindow({
-            id: "mail",
-            title: "Mail",
-            imageSrc: "/icons/mail.png",
-            altImage: "Mail",
-            isFullScreen: false,
-            isMinimized: false,
-            component: <Mail />,
-            ...getWindowPositionAndSize(width, height - 40, openedWindows),
-          });
-        },
-      },
+      // {
+      //   label: "Mail",
+      //   imageSrc: "/icons/mail.png",
+      //   altImage: "Mail",
+      //   onOpen: () => {
+      //     openWindow({
+      //       id: "mail",
+      //       title: "Mail",
+      //       imageSrc: "/icons/mail.png",
+      //       altImage: "Mail",
+      //       isFullScreen: false,
+      //       isMinimized: false,
+      //       component: <Mail />,
+      //       ...getWindowPositionAndSize(width, height - 40, openedWindows),
+      //     });
+      //   },
+      // },
     ];
   }, [openedWindows, width, height, openWindow]);
 

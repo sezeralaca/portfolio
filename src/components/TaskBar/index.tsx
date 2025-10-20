@@ -36,7 +36,7 @@ const StartMenuButton: FC = () => {
         onClick={() => setIsOpen(true)}
       >
         <div className="relative mr-0.5 h-5 w-5 md:h-7 md:w-7">
-          <Image priority fill src="/icons/start.png" alt="Start Menu" />
+          <Image priority fill src="/icons/start.png" alt="Start Menu" unoptimized />
         </div>
         <span className="truncate">Start</span>
       </button>
@@ -90,6 +90,7 @@ const RunningApps: FC = () => {
                 height={16}
                 alt={window.altImage}
                 src={window.imageSrc}
+                unoptimized
               />
               <span className="truncate">{window.title}</span>
             </button>
@@ -111,7 +112,7 @@ const SystemTray: FC = () => {
   return (
     <div className="flex items-center justify-center border-2 border-[#7c7c7c] border-b-white border-r-white py-0.5 pl-1 pr-2 text-sm md:pr-4 md:text-base">
       <div className="relative mr-1.5 h-5 w-5 md:mr-3 md:h-6 md:w-6">
-        <Image priority fill alt="Sound" src="/icons/sound.png" />
+        <Image priority fill alt="Sound" src="/icons/sound.png" unoptimized />
       </div>
       <p className="text-nowrap">
         {time.toLocaleTimeString("en-US", {

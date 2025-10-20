@@ -65,6 +65,7 @@ export const AppWindow: FC<{
               width={15}
               height={15}
               alt={altImage}
+              unoptimized
             />
           )}
           <h2 className="text-sm font-bold text-white">{title}</h2>
@@ -81,6 +82,7 @@ export const AppWindow: FC<{
               width={15}
               height={15}
               alt="Minimize"
+              unoptimized
             />
           </button>
 
@@ -94,6 +96,7 @@ export const AppWindow: FC<{
               height={15}
               alt="Maximize"
               src="/icons/maximize.png"
+              unoptimized
             />
           </button>
 
@@ -104,6 +107,7 @@ export const AppWindow: FC<{
               width={15}
               height={15}
               alt="Close"
+              unoptimized
             />
           </button>
         </div>
