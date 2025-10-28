@@ -3,48 +3,61 @@ import { FC } from "react";
 
 const PROJECTS = [
   {
-    title: "CloudVault",
-    image: "/screenshots/cloudvault.webp",
+    title: "Sersim After Sales App",
+    image: "/screenshots/sersimssh.png",
     imageAlt: "CloudVault Screenshot",
-    href: "https://github.com/premkumar5012002/cloud-vault",
+ 
     description: [
-      "Designed and implemented a web-based cloud storage platform using React and AWS services such as S3 and lambda.",
-      "Implemented an async file upload feature that supports uploading a maximum of 5 files at a time, with real-time progress tracking.",
-      "Developed a AWS Lambda function to handle webhook events when files are uploaded to S3, ensuring data is properly updated in database when file is uploaded.",
-    ],
+  "Developed mobile app from scratch with Ionic Angular and implemented web features based on provided Angular 19 designs.",
+  "Handled full native permissions for mobile and integrated push notifications using OneSignal.",
+  "Managed full application lifecycle independently, including store deployment, hosting, and end-to-end delivery."
+],
+
+
   },
   {
-    title: "QuickNotes",
-    image: "/screenshots/quicknotes.webp",
+    title: "Factory Defect Tracker",
+    image: "/screenshots/defect-tracker.png",
     imageAlt: "QuickNotes Screenshot",
-    href: "https://github.com/premkumar5012002/quick-notes",
-    description: [
-      "Utilized Tiptap rich text editing features, such as inline styling, code blocks, to enhance the note-taking experience.",
-      "Utilized Lucia auth to handle user authentication and session management.",
-      "Implemented custom throttling for login, forget password and verify email functionality to prevent brute force attacks.",
-    ],
+     
+   description: [
+   "Developed a cross-platform mobile application using Expo (React Native) for tracking and managing factory defects in real time.",
+   "Implemented JWT-based authentication and secure storage with Expo SecureStore to maintain persistent user sessions.",
+   "Built a responsive and modern UI using NativeWind (Tailwind CSS for React Native) and Lucide icons for consistent visual design."
+],
+
   },
   {
-    title: "Discuss",
-    image: "/screenshots/discuss.webp",
-    imageAlt: "Discuss Screenshot",
-    href: "https://github.com/premkumar5012002/discuss",
+    title: "SersimAPI",
+   
     description: [
-      "Implemented next.js streaming for fetching comments for the post, resulting in faster page load time.",
-      "Implemented Optimistic Updates for upvoting and downvoting posts to provide instantaneous feedback for user actions.",
-      "Utilized Tiptap rich text editor for post creation.",
-    ],
+  "Built with .NET API, EF Core with PostgreSQL, and JWT-based authentication.",
+  "Integrated Redis caching, AutoMapper, and custom middleware for authorization, error handling, and dynamic jobs.",
+  "Documented with Swagger/OpenAPI and configured IP rate limiting for secure and maintainable API endpoints."
+],
+
   },
   {
-    title: "DrawThing",
-    image: "/screenshots/drawthing.webp",
-    imageAlt: "Drawthing Screenshot",
-    href: "https://github.com/premkumar5012002/draw-thing",
+    title: "Factory Label Designer",
+ 
     description: [
-      "Implemented a drawing app using React and Tailwind CSS.",
-      "Implemented ability to pan, zoom and easily correct mistakes and revert changes with undo and redo options.",
-      "Implemented drawing tools such as rectangle tool, line tool, move tool and pencil tool.",
-    ],
+  "Developed a .NET application for designing product labels with XtraReports.",
+  "Integrated with SAP via WSDL services for real-time product and production data synchronization.",
+  "Implemented dynamic label templates and printing workflows for factory operations."
+],
+
+
+  },
+  {
+    title: "Freelance Dynamic Webpages",
+     
+    href: "#",
+    description: [
+  "Developed client-specific websites based on Figma designs or verbal requirements.",
+  "Created custom UI elements and styles, including Chart.js and Swiper.js integrations.",
+  "Delivered maintainable, readable code with clean, reusable frontend design patterns."
+],
+
   },
 ];
 
@@ -63,19 +76,19 @@ export const Projects: FC = () => {
                 {i + 1}. {project.title}
               </h3>
 
-              <div>
+              {project.image && (
                 <a target="_blank" href={project.href}>
                   <Image
                     priority
                     width={project.title === "Costfocus" ? 400 : 950}
                     height={1280}
                     src={project.image}
-                    className="mx-auto"
+                    className="mx-auto rounded-lg border border-gray-700"
                     alt={project.imageAlt}
                     unoptimized
                   />
                 </a>
-              </div>
+              )}
 
               <ul className="list-inside list-disc space-y-3 pl-1">
                 {project.description.map((desc, i) => (
