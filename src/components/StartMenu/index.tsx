@@ -4,19 +4,28 @@ import { Icon } from "@iconify/react";
 
 const ITEMS = [
   {
+    label: "Privacy",
+    href: "/privacy",
+    icon: "mdi:shield-lock-outline",
+    isExternal: false,
+  },
+  {
     label: "Email",
     href: "mailto:ahmetsezeralaca@gmail.com",
     icon: "skill-icons:gmail-light",
+    isExternal: true,
   },
   {
     label: "Linkedin",
     href: "https://www.linkedin.com/in/sezeralaca",
     icon: "skill-icons:linkedin",
+    isExternal: true,
   },
   {
     label: "Github",
     href: "https://github.com/sezeralaca",
     icon: "skill-icons:github-light",
+    isExternal: true,
   },
   
   // {
@@ -44,15 +53,17 @@ export const StartMenu: FC = () => {
   );
 };
 
-const StartMenuItem: FC<{ label: string; href: string; icon: string }> = ({
-  label,
-  href,
-  icon,
-}) => {
+const StartMenuItem: FC<{
+  label: string;
+  href: string;
+  icon: string;
+  isExternal: boolean;
+}> = ({ label, href, icon, isExternal }) => {
   return (
     <Link
       href={href}
-      target="_blank"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer" : undefined}
       className="flex items-center gap-2 px-2.5 py-2 hover:bg-accent hover:text-white"
     >
       <Icon icon={icon} className="h-8 w-8" />

@@ -11,6 +11,7 @@ import { getWindowPositionAndSize } from "@/lib/utils";
 import { Biography } from "../Apps/Biography";
 import { Resume } from "../Apps/Resume";
 import { Projects } from "../Apps/Projects";
+import { Privacy } from "../Apps/Privacy";
 // import { Mail } from "../Apps/Mail";
 
 export const DesktopView = () => {
@@ -70,6 +71,24 @@ export const DesktopView = () => {
             isFullScreen: false,
             isMinimized: false,
             component: <Projects />,
+            ...getWindowPositionAndSize(width, height - 40, openedWindows),
+          });
+        },
+      },
+      {
+        label: "Privacy",
+        imageSrc: "/icons/document.png",
+        altImage: "Document",
+        unoptimized: true,
+        onOpen: () => {
+          openWindow({
+            id: "privacy",
+            title: "Privacy",
+            imageSrc: "/icons/document.png",
+            altImage: "Document",
+            isFullScreen: false,
+            isMinimized: false,
+            component: <Privacy />,
             ...getWindowPositionAndSize(width, height - 40, openedWindows),
           });
         },

@@ -7,9 +7,10 @@ import { useWindowStore } from "@/store/window";
 
 import { AppWindow } from "@/components/UI/Window";
 import { Biography } from "./Biography";
+import { Privacy } from "./Privacy";
 import { getWindowPositionAndSize } from "@/lib/utils";
 
-export const Apps = () => {
+export const Apps = ({ openPrivacyOnLoad = false }: { openPrivacyOnLoad?: boolean }) => {
   const { width, height } = useWindowSize();
 
   const { openedWindows, openWindow } = useWindowStore();
@@ -25,7 +26,20 @@ export const Apps = () => {
       component: <Biography />,
       ...getWindowPositionAndSize(width, height - 40, []),
     });
-  }, []);
+
+    if (openPrivacyOnLoad) {
+      openWindow({
+        id: "privacy",
+        title: "Privacy",
+        imageSrc: "/icons/document.png",
+        altImage: "Document",
+        isFullScreen: false,
+        isMinimized: false,
+        component: <Privacy />,
+        ...getWindowPositionAndSize(width, height - 40, []),
+      });
+    }
+  }, [height, openPrivacyOnLoad, openWindow, width]);
 
   return openedWindows.map((window) => {
     if (window.isMinimized === false) {
