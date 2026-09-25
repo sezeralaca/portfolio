@@ -7,7 +7,7 @@ export const Biography: FC = () => {
       <div className="mx-auto w-full max-w-3xl p-6">
         <div>
           <h2 className="text-3xl font-bold">Ahmet Sezer Alaca</h2>
-          <p className="pt-3 text-base text-slate-600">Full Stack Developer</p>
+          <p className="pt-3 text-base text-slate-600">Software Engineer & Full Stack Dev.</p>
         </div>
 
         <div className="flex flex-wrap gap-3 pt-4">
